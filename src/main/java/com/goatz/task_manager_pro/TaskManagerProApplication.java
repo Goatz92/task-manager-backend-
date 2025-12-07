@@ -11,9 +11,6 @@ public class TaskManagerProApplication {
         // Load .env before Spring Boot starts
         Dotenv dotenv = Dotenv.load();
 
-        System.out.println("DB_URL=" + dotenv.get("DB_URL"));
-        System.out.println("DB_USER=" + dotenv.get("DB_USER"));
-        System.out.println("DB_PASSWORD=" + dotenv.get("DB_PASSWORD"));
 
         // Set environment variables manually for Spring Boot
         System.setProperty("spring.datasource.url", dotenv.get("DB_URL"));
