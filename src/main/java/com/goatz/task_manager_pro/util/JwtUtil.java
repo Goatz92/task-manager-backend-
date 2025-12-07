@@ -6,23 +6,23 @@ import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.security.Keys;
 
+import io.jsonwebtoken.Claims;
+import io.jsonwebtoken.Jws;
+import io.jsonwebtoken.Jwts;
+import io.jsonwebtoken.SignatureAlgorithm;
+import io.jsonwebtoken.security.Keys;
+
 import java.security.Key;
 import java.util.Date;
 
 public class JwtUtil {
 
-    // Secret key for HMAC; in production, load from env variable
-    private static final String SECRET = System.getProperty("JWT_SECRET", "defaultSuperSecretKey12345");
+    private static final String SECRET = EnvConfig.getJwtSecret();
 
-    // Token expiration: 1 hour
-    private static final long EXPIRATION = 1000 * 60 * 60;
-
-    // Create a Key object from the secret
     private static final Key key = Keys.hmacShaKeyFor(SECRET.getBytes());
 
-    /**
-     * Generate a JWT token for a given username
-     */
+    private static final long EXPIRATION = 1000 * 60 * 60;
+
     public static String generateToken(String username) {
         return Jwts.builder()
                 .setSubject(username)
@@ -50,5 +50,10 @@ public class JwtUtil {
                 .getExpiration();
 
         return expiration.before(new Date());
+    }
+
+    public static boolean validateToken(String token, String username) {
+        String tokenUsername = getUsernameFromToken(token);
+        return tokenUsername.equals(username) && !isTokenExpired(token);
     }
 }
