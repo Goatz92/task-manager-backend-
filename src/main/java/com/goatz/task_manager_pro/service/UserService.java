@@ -2,7 +2,7 @@ package com.goatz.task_manager_pro.service;
 
 import com.goatz.task_manager_pro.dao.UserRepository;
 import com.goatz.task_manager_pro.dto.UserInsertDTO;
-import com.goatz.task_manager_pro.exceptions.EntityAlreadyExistsException;
+import com.goatz.task_manager_pro.core.exceptions.EntityAlreadyExistsException;
 import com.goatz.task_manager_pro.mapper.Mapper;
 import com.goatz.task_manager_pro.model.User;
 import com.goatz.task_manager_pro.model.auth.Role;
