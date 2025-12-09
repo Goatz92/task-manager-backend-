@@ -1,4 +1,4 @@
-package com.goatz.task_manager_pro.exceptions;
+package com.goatz.task_manager_pro.core.exceptions;
 
 public class EntityNotAuthorizedException extends EntityGenericException {
     private static final String DEFAULT_CODE = "NotAuthorized";

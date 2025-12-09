@@ -1,4 +1,4 @@
-package com.goatz.task_manager_pro.exceptions;
+package com.goatz.task_manager_pro.core.exceptions;
 
 public class EntityInvalidArgumentException extends EntityGenericException {
     private static final String DEFAULT_CODE = "InvalidArgument";
