@@ -11,7 +11,7 @@ import lombok.*;
 @ToString
 public class UserEditDTO {
 
-    @NotNull(message = "Name can not be null.")
-    @Size(min = 2, message = "Name size must be at least 2 characters long.")
-    private String firstname;
+    @NotNull(message = "Username can not be null.")
+    @Size(min = 2, message = "Username size must be at least 2 characters long.")
+    private String username;
 }

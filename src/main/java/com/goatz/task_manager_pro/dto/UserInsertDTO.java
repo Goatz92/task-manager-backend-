@@ -15,9 +15,9 @@ import lombok.Setter;
 @Setter
 public class UserInsertDTO {
 
-    @NotNull(message = "Name can not be null.")
-    @Size(min = 3, max = 20, message = "Name size must be between 3 and 20 characters long.")
-    private String firstname;
+    @NotNull(message = "Userame can not be null.")
+    @Size(min = 3, max = 20, message = "userame size must be between 3 and 20 characters long.")
+    private String username;
 
     @NotEmpty(message = "Password is required.")
     @Pattern(

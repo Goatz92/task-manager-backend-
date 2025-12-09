@@ -13,6 +13,6 @@ import java.time.LocalDateTime;
 @Setter
 public class UserReadOnlyDTO {
 
-    private String firstname;
+    private String username;
     private String role;
 }
