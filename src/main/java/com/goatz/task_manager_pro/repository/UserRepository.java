@@ -16,6 +16,7 @@ public interface UserRepository extends JpaRepository<User, Long> {
      * @param role Role entity
      * @return Optional containing the user if found
      */
+
     Optional<User> findByRole(Role role);
 
     /**
