@@ -13,6 +13,7 @@ import lombok.Setter;
  * Data Transfer Object for user registration requests.
  * Contains validation annotations for username and password fields.
  */
+
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter

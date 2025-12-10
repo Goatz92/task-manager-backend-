@@ -8,6 +8,7 @@ import lombok.*;
  * Data Transfer Object for editing user information.
  * Used for update operations on user entities.
  */
+
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter

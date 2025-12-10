@@ -9,6 +9,7 @@ import lombok.Setter;
  * Data Transfer Object for exposing read-only user information.
  * Used for displaying user details without sensitive fields.
  */
+
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
