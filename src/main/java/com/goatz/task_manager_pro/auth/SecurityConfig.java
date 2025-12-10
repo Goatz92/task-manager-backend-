@@ -34,22 +34,22 @@ public class SecurityConfig {
                 .authorizeHttpRequests(authorize -> authorize
                         .requestMatchers("/", "/index.html").permitAll()
                         .requestMatchers("/task/users/register").permitAll()
-                        .requestMatchers(HttpMethod.GET, "task/edit/{uuid}").hasAuthority("EDIT_TASK")
-                        .requestMatchers(HttpMethod.GET, "task/delete/{uuid}").hasAuthority("EDIT_TASK")
+                        .requestMatchers(HttpMethod.GET, "/task/edit/{uuid}").hasAuthority("EDIT_TASK")
+                        .requestMatchers(HttpMethod.GET, "/task/delete/{uuid}").hasAuthority("EDIT_TASK")
                         .requestMatchers(HttpMethod.POST, "/task/edit").hasAuthority("EDIT_TASK")
-                        .requestMatchers("users/tasks/**").hasAnyRole("ADMIN")
-                        .requestMatchers("users/admin/**").hasRole("ADMIN")
+                        .requestMatchers("/users/tasks/**").hasAnyRole("ADMIN")
+                        .requestMatchers("/users/admin/**").hasRole("ADMIN")
                         .requestMatchers("/css/**").permitAll()
                         .requestMatchers("/js/**").permitAll()
                         .requestMatchers("/img/**").permitAll()
                         .anyRequest().authenticated()
                 )
 
-                .formLogin(formLogin -> formLogin
-                        .loginPage("/login")
-                        .defaultSuccessUrl("/users/tasks", true)
-                        .permitAll()
-                )
+                        .formLogin(formLogin -> formLogin
+                                .loginPage("/login")
+                                .defaultSuccessUrl("/", true)
+                                .permitAll()
+                        )
                 .httpBasic(Customizer.withDefaults())
                 .logout(logout -> logout
                         .logoutSuccessUrl("/login")
