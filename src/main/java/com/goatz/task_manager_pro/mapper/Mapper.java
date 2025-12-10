@@ -5,11 +5,11 @@ import com.goatz.task_manager_pro.dto.UserReadOnlyDTO;
 import com.goatz.task_manager_pro.model.User;
 import org.springframework.stereotype.Component;
 
-@Component
 /**
  * Utility class for mapping between DTOs and entity objects.
  * Provides conversion methods for user registration and read-only views.
  */
+@Component
 public class Mapper {
 
     /**
