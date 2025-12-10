@@ -17,8 +17,17 @@ import java.util.stream.Collectors;
 @WebServlet
 public class InspectRequestController extends HttpServlet {
 
-    @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+        /**
+         * Inspects HTTP request, session, headers, cookies, and context for debugging purposes.
+         * Endpoint: GET (Servlet mapping)
+         * Writes inspection details to response and server logs, then forwards/redirects to /task-app/tasks.
+         * @param request The HTTP servlet request
+         * @param response The HTTP servlet response
+         * @throws IOException
+         * @throws ServletException
+         */
+        @Override
+        protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws IOException, ServletException {
         String username = request.getParameter("username"); // Placeholder: Change username query param.
         String password = request.getParameter("password"); // Placeholder: Change password query param.
@@ -93,6 +102,14 @@ public class InspectRequestController extends HttpServlet {
         response.sendRedirect("/task-app/tasks");
     }
 
+    /**
+     * Displays authentication debug info for the current user.
+     * Endpoint: GET /debug-auth
+     * Adds username and authorities to the model for the view.
+     * Redirects to login if not authenticated.
+     * @param model Spring MVC model for view attributes
+     * @return Thymeleaf template name for debug info or redirect to login
+     */
     @GetMapping("/debug-auth")
     public String debugAuth(Model model) {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
