@@ -4,6 +4,10 @@ import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.*;
 
+/**
+ * Data Transfer Object for editing user information.
+ * Used for update operations on user entities.
+ */
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter

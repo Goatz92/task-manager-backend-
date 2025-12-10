@@ -17,10 +17,10 @@ A Spring Boot 4.0 application for managing tasks with robust role-based security
   - Create a user and grant privileges.
 4. **Configure environment variables:**
   - Copy `.env.example` to `.env` and set:
-    - `DB_URL` (Your)
-    - `DB_USER`
-    - `DB_PASSWORD`
-    - `JWT_SECRET`
+    - `DB_URL`=your_db_connection_string
+    - `DB_USER`=your_db_username
+    - `DB_PASSWORD`=your_db_password
+    - `JWT_SECRET`=your_jwt_secret
 5. **Build and run the application:**
   ```bash
   mvn clean package

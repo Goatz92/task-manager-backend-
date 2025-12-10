@@ -9,6 +9,10 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+/**
+ * Data Transfer Object for user registration requests.
+ * Contains validation annotations for username and password fields.
+ */
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
@@ -25,6 +29,5 @@ public class UserInsertDTO {
             message = "Password must contain: 1 uppercase, 1 lowercase, 1 digit, 1 special character, and no whitespace"
     )
     private String password;
-
     private Long roleId;
 }

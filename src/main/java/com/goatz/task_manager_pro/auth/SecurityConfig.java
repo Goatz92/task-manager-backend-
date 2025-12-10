@@ -13,8 +13,19 @@ import org.springframework.security.web.SecurityFilterChain;
 @Configuration
 @EnableWebSecurity
 @RequiredArgsConstructor
+/**
+ * Spring Security configuration for the application.
+ * Defines endpoint access rules, login/logout behavior, and disables CSRF.
+ */
 public class SecurityConfig {
 
+    /**
+     * Configures the security filter chain for HTTP requests.
+     * Sets up endpoint permissions, login/logout, and disables CSRF.
+     * @param http HttpSecurity configuration object
+     * @return Configured SecurityFilterChain
+     * @throws Exception if configuration fails
+     */
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
 

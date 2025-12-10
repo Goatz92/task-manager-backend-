@@ -1,12 +1,12 @@
 package com.goatz.task_manager_pro.service;
 
-import com.goatz.task_manager_pro.dao.UserRepository;
 import com.goatz.task_manager_pro.dto.UserInsertDTO;
 import com.goatz.task_manager_pro.core.exceptions.EntityAlreadyExistsException;
 import com.goatz.task_manager_pro.mapper.Mapper;
 import com.goatz.task_manager_pro.model.User;
 import com.goatz.task_manager_pro.model.auth.Role;
 import com.goatz.task_manager_pro.repository.RoleRepository;
+import com.goatz.task_manager_pro.repository.UserRepository;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -18,12 +18,22 @@ import java.util.List;
 @Service
 @Slf4j
 @RequiredArgsConstructor
+/**
+ * Service for user-related business logic and operations.
+ * Handles user registration, password encoding, and role assignment.
+ */
 public class UserService {
     private final UserRepository userRepository;
     private final PasswordEncoder passwordEncoder;
     private final Mapper mapper;
     private final RoleRepository roleRepository;
 
+    /**
+     * Registers a new user in the system.
+     * Validates for duplicate username, encodes password, assigns role, and saves user.
+     * @param userInsertDTO DTO containing user registration data
+     * @throws EntityAlreadyExistsException if username already exists
+     */
     @Transactional(rollbackOn = Exception.class)
     public void saveUser(UserInsertDTO userInsertDTO) throws EntityAlreadyExistsException {
         try {
@@ -41,17 +51,5 @@ public class UserService {
             log.error("Save failed for user with username={}. User already exists", userInsertDTO.getUsername(), e);
             throw e;
         }
-    }
-
-    public List<User> getAllUsers() {
-        return userRepository.findAll();
-    }
-
-    public User getUserById(Integer id) {
-        return userRepository.findById(id).orElse(null);
-    }
-
-    public User getUserByUsername(String username) {
-        return userRepository.findByUsername(username).orElse(null);
     }
 }

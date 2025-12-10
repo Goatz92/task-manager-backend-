@@ -19,12 +19,19 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @AllArgsConstructor
 @EntityListeners(AuditingEntityListener.class)
+/**
+ * Abstract base class for JPA entities with auditing fields.
+ * Provides automatic tracking of creation and update timestamps.
+ * Used as a superclass for all entities requiring audit info.
+ */
 public abstract class AbstractEntity {
 
+    /** Timestamp when the entity was created (set automatically, never updated). */
     @CreatedDate
     @Column(name = "created_at", nullable = false, updatable = false)
     private LocalDateTime createdAt;
 
+    /** Timestamp when the entity was last updated (set automatically). */
     @LastModifiedDate
     @Column(name = "updated_at")
     private LocalDateTime updatedAt;
