@@ -96,9 +96,3 @@ A Spring Boot 4.0 application for managing tasks with robust role-based security
 - The `Task` entity is currently empty (feature in progress)
 - Role entities must exist in the database before assigning to users
 - All entities inherit auditing fields from `AbstractEntity`
-
-## License
-MIT
-
----
-For more details, see `.github/copilot-instructions.md` for AI agent and contributor guidelines.
