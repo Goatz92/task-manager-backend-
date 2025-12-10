@@ -5,14 +5,14 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 
-@SpringBootApplication
-@EnableJpaAuditing
 /**
  * Main entry point for the Task Manager Pro Spring Boot application.
  * Loads environment variables from .env before starting Spring Boot,
  * sets required system properties for database and JWT configuration,
  * and enables JPA auditing for entity timestamp fields.
  */
+@SpringBootApplication
+@EnableJpaAuditing
 public class TaskManagerProApplication {
 
     /**
