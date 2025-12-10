@@ -13,17 +13,17 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import java.time.LocalDateTime;
 
+/**
+ * Abstract base class for JPA entities with auditing fields.
+ * Provides automatic tracking of creation and update timestamps.
+ * Used as a superclass for all entities requiring audit info.
+ */
 @MappedSuperclass
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @EntityListeners(AuditingEntityListener.class)
-/**
- * Abstract base class for JPA entities with auditing fields.
- * Provides automatic tracking of creation and update timestamps.
- * Used as a superclass for all entities requiring audit info.
- */
 public abstract class AbstractEntity {
 
     /** Timestamp when the entity was created (set automatically, never updated). */

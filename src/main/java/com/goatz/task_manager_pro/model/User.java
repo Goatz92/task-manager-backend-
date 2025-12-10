@@ -9,6 +9,11 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.*;
 
+/**
+ * JPA entity representing a user in the system.
+ * Implements Spring Security's UserDetails for authentication and authorization.
+ * Inherits auditing fields from AbstractEntity.
+ */
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
@@ -16,11 +21,6 @@ import java.util.*;
 @Setter
 @Builder
 @Table(name = "users")
-/**
- * JPA entity representing a user in the system.
- * Implements Spring Security's UserDetails for authentication and authorization.
- * Inherits auditing fields from AbstractEntity.
- */
 public class User extends AbstractEntity implements UserDetails {
 
     @Id

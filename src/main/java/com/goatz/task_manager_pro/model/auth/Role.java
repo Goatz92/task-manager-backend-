@@ -12,16 +12,16 @@ import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
 
+/**
+ * JPA entity representing a user role in the system.
+ * Manages relationships to users and capabilities.
+ */
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
 @Setter
 @Entity
 @Table(name = "roles")
-/**
- * JPA entity representing a user role in the system.
- * Manages relationships to users and capabilities.
- */
 public class Role {
 
     @Id

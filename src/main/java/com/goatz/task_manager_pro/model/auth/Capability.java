@@ -9,16 +9,16 @@ import lombok.Setter;
 import java.util.HashSet;
 import java.util.Set;
 
+/**
+ * JPA entity representing a capability (permission) in the system.
+ * Manages relationships to roles.
+ */
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
 @Setter
 @Entity
 @Table(name = "capabilities")
-/**
- * JPA entity representing a capability (permission) in the system.
- * Manages relationships to roles.
- */
 public class Capability {
 
     @Id
