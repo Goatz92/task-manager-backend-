@@ -26,8 +26,4 @@ public class LoginController {
      * @param principal The authenticated user principal (if any)
      * @return Index template name if not authenticated, otherwise redirect to tasks
      */
-    @GetMapping("/")
-    public String root(Principal principal) {
-        return principal == null ? "index2" : "redirect:/task-app/task";
-    }
 }

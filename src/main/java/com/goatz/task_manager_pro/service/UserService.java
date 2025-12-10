@@ -22,11 +22,19 @@ import java.util.List;
  * Service for user-related business logic and operations.
  * Handles user registration, password encoding, and role assignment.
  */
-public class UserService {
+public class UserService implements IUserService {
     private final UserRepository userRepository;
     private final PasswordEncoder passwordEncoder;
     private final Mapper mapper;
     private final RoleRepository roleRepository;
+
+        /**
+         * Returns a list of all users in the system.
+         * @return List of User entities
+         */
+        public List<User> getAllUsers() {
+            return userRepository.findAll();
+        }
 
     /**
      * Registers a new user in the system.

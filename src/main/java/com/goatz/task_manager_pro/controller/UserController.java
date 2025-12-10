@@ -24,6 +24,17 @@ public class UserController {
     private final UserInsertValidator userInsertValidator;
     private final RoleRepository roleRepository;
 
+        /**
+         * Displays a list of all users.
+         * Endpoint: GET /task/users
+         * @param model Spring MVC model for view attributes
+         * @return Thymeleaf template name for the user list
+         */
+        @GetMapping("/users")
+        public String getAllUsers(Model model) {
+            model.addAttribute("users", userService.getAllUsers());
+            return "user-list";
+        }
 
     /**
      * Displays the user registration form.
